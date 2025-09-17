@@ -13,6 +13,7 @@ class Runner {
             personService.populatePerson()
             personService.displayAll()
             personService.displayByAgeLessThan(40)
+            personService.displayByName("Jo")
             println("--------------------------------------")
         }
     }

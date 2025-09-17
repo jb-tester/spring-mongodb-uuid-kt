@@ -24,4 +24,9 @@ class PersonService(private val personRepository: PersonRepository) {
         personRepository.findByAge(age).forEach(Consumer { x: Person? -> println(x) })
         println("======================================================")
     }
+    fun displayByName(name: String) {
+        println("====== persons name like $name=========================")
+        personRepository.findByName(name).forEach(Consumer { x: Person? -> println(x) })
+        println("======================================================")
+    }
 }

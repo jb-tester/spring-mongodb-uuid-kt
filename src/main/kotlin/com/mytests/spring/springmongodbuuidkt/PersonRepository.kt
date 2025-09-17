@@ -5,6 +5,9 @@ import org.springframework.data.mongodb.repository.Query
 import java.util.*
 
 interface PersonRepository : MongoRepository<Person, UUID>{
-    @Query("{age: {\$lt : ?0}}")
+    @Query($$"{age: {$lt : ?0}}")
     fun findByAge(age: Int): MutableList<Person>
+
+    @Query("{name: {\$regex: ?0}}")
+    fun findByName(name: String): MutableList<Person>
 }
