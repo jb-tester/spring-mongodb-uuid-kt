@@ -4,8 +4,9 @@ import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
 
 @Document(collection = "person")
-class Person(@Field(name = "name") var firstName: String?,
-             var age: Int) : BaseEntityWithUuidId() {
+class Person(
+    @Field(name = "name") var firstName: String?,
+    @Field var age: Int) : BaseEntityWithUuidId() {
 
     @Field(name = "surname")
     var lastName: String? = null
